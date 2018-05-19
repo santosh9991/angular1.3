@@ -1,0 +1,4 @@
+dependency injection: 
+giving function an object, rather creating and passing
+
+$scope: it is an object of the scope service
