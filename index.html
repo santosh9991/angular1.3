@@ -7,13 +7,15 @@
         <title>GETTING STARTED WITH BRACKETS</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <script src="http://code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.3.0/angular-messages.min.js"></script><!-- includes third party dependencies -->
         <script src="app.js"></script>
     </head>
     <body>
         
         
         <div ng-controller="mainController">
-            <h1 >HELLO SANTOSH</h1>
+            <h1 >HELLO {{name}}</h1><!--name gets replaced by the $scodpe.name from the mainController. This is called string interpolation. Angularjs service scope takes care of the 
+                connection helps in interpolation-->
             <h2>HOW ARE YOU?</h2>
         </div>
         
