@@ -15,13 +15,30 @@ myApp.config(function ($routeProvider){
         controller: 'secondController'
     })
 })
-
-myApp.controller('mainController',["$scope",function($scope){
+myApp.service('nameService',function(){
+    self = this;
+    this.name = "Santosh";
+    this.nameLength = function(){
+        return self.name.length
+    }
+})
+myApp.controller('mainController',["$scope","$log","nameService",function($scope,$log,nameService){
     
-    $scope.name = "Main";
+    $scope.name = nameService.name;
+    $scope.$watch('name',function(){
+        nameService.name = $scope.name
+    })
+    $log.log(nameService.name);
+    $log.log(nameService.nameLength());
+    
 }]);
 
-myApp.controller('secondController',["$scope",function($scope){
+myApp.controller('secondController',["$scope","$log","nameService",function($scope,$log,nameService){
     
-    $scope.name = "Second";
+    $scope.name = nameService.name;
+    $scope.$watch('name',function(){
+        nameService.name = $scope.name
+    });
+    $log.log(nameService.name);
+    $log.log(nameService.nameLength());
 }]);
