@@ -3,6 +3,9 @@ giving function an object, rather creating and passing
 
 $scope: it is an object of the scope service
 
+directories and two way data binding:
+directives are custom attributes like ng-controller,ng-model which directs the html element to behave. ng-model bindes the model with the view. i.e updating the contents of the model from the view.
+This is really powerfull
 
 myApp.controller('mainController',function($scope,$log){//$scope is an object and $ is a part of varible name. All angular js services start with a $ sign. 
     
@@ -32,3 +35,6 @@ myApp.controller('mainController',function($scope,$log){//$scope is an object an
     //when you console it out you can see an object in the browser console, this is because it is an angular js object that it injects it into the function.
     //basically this is model(data) that the view(html) needs and the angular js binds them togeather  
 });//place to put the code associated with this controller
+
+
+in memory representation of html is called DOM(document object model)

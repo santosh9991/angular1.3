@@ -6,16 +6,15 @@ var myApp = angular.module("myApp",['ngMessages']);//ngMessages[name of the modu
 
 
 
-myApp.controller('mainController',function($scope){//$scope is an object and $ is a part of varible name. All angular js services start with a $ sign. 
+myApp.controller('mainController',["$scope","$filter","$timeout",function($scope,$filter,$timeout){//$scope is an object and $ is a part of varible name. All angular js services start with a $ sign. 
     
     $scope.name = "santosh";
     //timeout is a angularjs service equivalent to settimeout in javascript
     $timeout(function(){
         $scope.name = "Krishna"
-    },3000)
-    
-    
-    
-    
-
-});//place to put the code associated with this controller
+    },3000) 
+    $scope.userName = '';
+    $scope.lowerCaseUserName = function(){
+        return $filter('lowercase')($scope.userName)
+    };
+}]);//place to put the code associated with this controller

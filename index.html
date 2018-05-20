@@ -16,7 +16,11 @@
         <div ng-controller="mainController">
             <h1 >HELLO {{name}}</h1><!--name gets replaced by the $scodpe.name from the mainController. This is called string interpolation. Angularjs service scope takes care of the 
                 connection helps in interpolation-->
-            <h2>HOW ARE YOU?</h2>
+            <div>
+                <label>what is your github user id?</label>
+                <input type="text" ng-model="userName">
+            </div>
+            <h2>www.github.com/{{lowerCaseUserName()}}</h2>
         </div>
         
     </body>
